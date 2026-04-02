@@ -1,292 +1,271 @@
 "use client"
 
 import Link from "next/link";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, CheckCircle2, MessageCircle, Phone, Settings, Zap, Smartphone, Globe, Navigation, Utensils, Star, ShoppingBag, Calendar, Users } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
+import { ArrowRight, CheckCircle2, MessageCircle, Phone, Settings, Zap, Smartphone, Globe, Navigation, Utensils, Star, ShoppingBag, Calendar, Users, GraduationCap, ShieldCheck } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+// Helper component for SaaS Browser Frame mockup
+function BrowserMockup({ children, className }: { children: React.ReactNode, className?: string }) {
+  return (
+    <div className={cn("rounded-xl border border-slate-200/60 bg-white shadow-2xl overflow-hidden shadow-slate-200/50", className)}>
+      <div className="flex items-center gap-2 border-b border-slate-100 bg-slate-50/50 px-4 py-3">
+        <div className="flex gap-1.5">
+          <div className="h-3 w-3 rounded-full bg-slate-200" />
+          <div className="h-3 w-3 rounded-full bg-slate-200" />
+          <div className="h-3 w-3 rounded-full bg-slate-200" />
+        </div>
+        <div className="mx-auto flex h-6 w-full max-w-sm items-center justify-center rounded-md bg-white px-3 text-[10px] text-slate-400 shadow-sm border border-slate-100">
+          <Globe className="mr-1 h-3 w-3 opacity-50" />
+          yumpia.vercel.app
+        </div>
+      </div>
+      <div className="relative bg-slate-50">
+        {children}
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative px-6 lg:px-8 py-24 sm:py-32 bg-primary overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
-        <div className="mx-auto max-w-4xl text-center relative z-10">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6">
-            Launch Your Online<br />
-            <span className="text-secondary">Ordering System</span> in 7 Days
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-primary-foreground/90 max-w-2xl mx-auto mb-10">
-            We build custom ordering systems for Filipino businesses. Food, jewelry, services — if you sell it, we digitize it!
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a 
-              href="https://yumpia.vercel.app" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className={buttonVariants({ size: "lg", className: "bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full sm:w-auto h-14 px-8 text-lg" })}
-            >
-              See Live Demo 🍱
-            </a>
-            <Link 
-              href="/contact"
-              className={buttonVariants({ size: "lg", variant: "outline", className: "w-full sm:w-auto h-14 px-8 text-lg border-primary-foreground/20 text-white hover:bg-primary-foreground/10 bg-transparent" })}
-            >
-              Get Started <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
+    <div className="flex flex-col min-h-screen bg-white">
+      
+      {/* SaaS Hero Section - PayMongo Style (Split layout, ultra clean) */}
+      <section className="relative px-6 lg:px-8 pt-20 pb-32 overflow-hidden">
+        {/* Subtle background blob for SaaS vibe */}
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-50 via-white to-white"></div>
+        
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
+            
+            {/* Left Content */}
+            <div className="max-w-xl">
+              <div className="inline-flex items-center rounded-full border border-blue-100 bg-blue-50/50 px-3 py-1 text-sm font-medium text-blue-800 mb-6 group">
+                <span className="flex h-2 w-2 rounded-full bg-blue-600 mr-2 animate-pulse"></span>
+                Now available across the Philippines
+              </div>
+              <h1 className="text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl mb-6 leading-[1.1]">
+                Launch your online ordering system in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">7 Days.</span>
+              </h1>
+              <p className="mt-4 text-lg leading-relaxed text-slate-500 mb-10 max-w-lg">
+                We build custom ordering systems for Filipino businesses. Food, jewelry, services — if you sell it, we digitize it. Say goodbye to manual chat orders and hello to automation.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <a 
+                  href="https://yumpia.vercel.app" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={buttonVariants({ size: "lg", className: "bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-200 transition-all h-14 px-8 text-lg font-medium" })}
+                >
+                  See Live Demo 🍱
+                </a>
+                <Link 
+                  href="/contact"
+                  className={buttonVariants({ size: "lg", variant: "outline", className: "border-slate-200 text-slate-700 hover:bg-slate-50 h-14 px-8 text-lg font-medium" })}
+                >
+                  Book Consultation <ArrowRight className="ml-2 h-5 w-5 text-slate-400" />
+                </Link>
+              </div>
 
-      {/* How It Works */}
-      <section className="py-24 bg-muted/50">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center mb-16">
-            <h2 className="text-base font-semibold leading-7 text-secondary">Simple Process</h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              How It Works
-            </p>
-          </div>
-          <div className="mx-auto max-w-5xl">
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-              {[
-                {
-                  icon: Phone,
-                  title: "1. Contact Us",
-                  desc: "Tell us about your business and we will recommend the perfect plan for you.",
-                  color: "bg-blue-100 text-blue-600"
-                },
-                {
-                  icon: Settings,
-                  title: "2. We Build It",
-                  desc: "Our team sets up your complete ordering system in 3-7 days using proven technology.",
-                  color: "bg-orange-100 text-orange-600"
-                },
-                {
-                  icon: Globe,
-                  title: "3. You Go Live",
-                  desc: "Receive orders online, manage from your phone, grow your business!",
-                  color: "bg-green-100 text-green-600"
-                }
-              ].map((step, i) => (
-                <Card key={i} className="border-none shadow-md hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${step.color}`}>
-                      <step.icon className="h-6 w-6" />
-                    </div>
-                    <CardTitle>{step.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{step.desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
+              {/* Trust Signal */}
+              <div className="flex items-center gap-3 text-sm text-slate-500 bg-slate-50 py-3 px-4 rounded-lg w-fit border border-slate-100">
+                <GraduationCap className="h-5 w-5 text-blue-500" />
+                <span className="font-semibold text-slate-700">Built by Technopreneurship Students</span>
+                <span className="text-slate-300">|</span>
+                <ShieldCheck className="h-4 w-4 text-emerald-500" />
+                <span>Professor Approved</span>
+              </div>
+            </div>
+
+            {/* Right Mockup */}
+            <div className="relative lg:ml-auto w-full max-w-2xl">
+              {/* Decorative background glow behind mockup */}
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-blue-100 to-blue-50 opacity-50 blur-2xl"></div>
+              
+              <BrowserMockup className="rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
+                <img 
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000" 
+                  alt="Dashboard Placeholder" 
+                  className="w-full object-cover aspect-[4/3] opacity-90"
+                />
+              </BrowserMockup>
+
+              {/* Floating Element 1 - Notification */}
+              <div className="absolute -left-8 top-1/4 rounded-lg bg-white p-4 shadow-xl border border-slate-100 animate-bounce" style={{animationDuration: '3s'}}>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-600">
+                    <CheckCircle2 className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-slate-900">New Order #1024</p>
+                    <p className="text-xs text-slate-500">Just now • ₱1,250</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Products/Services */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center mb-16">
-            <h2 className="text-base font-semibold leading-7 text-secondary">Our Solutions</h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Built for Every Business
-            </p>
+      {/* How It Works - Notion Style (Clean, step-by-step rows) */}
+      <section className="py-32 bg-slate-50 border-y border-slate-100">
+        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+          <div className="mb-20">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+              Simple process. <span className="text-slate-400">Powerful results.</span>
+            </h2>
           </div>
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-4 sm:grid-cols-2">
+          
+          <div className="space-y-16">
             {[
               {
-                title: "Food Ordering System",
-                icon: Utensils,
-                desc: "Complete online ordering for restaurants, food stalls, and delivery businesses",
-                price: "Starting at ₱499/month",
-                soon: false
+                num: "01",
+                title: "Contact Us",
+                desc: "Tell us about your business scope and operations. We will analyze your needs and recommend the perfect digital plan for you. No technical jargon, just straight business value.",
+                image: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=600"
               },
               {
-                title: "Custom Product Ordering",
-                icon: ShoppingBag,
-                desc: "For jewelry, cakes, clothes — let customers customize their orders online",
-                price: "Starting at ₱999/month",
-                soon: false
+                num: "02",
+                title: "We Build It",
+                desc: "Our team sets up your complete ordering system in 3-7 days using proven technology. We handle the menus, the admin panel configuration, and the integrations.",
+                image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&q=80&w=600"
               },
               {
-                title: "Appointment Booking",
-                icon: Calendar,
-                desc: "For salons, clinics, tutorials — online booking made simple",
-                price: "",
-                soon: true
-              },
-              {
-                title: "Service Marketplace",
-                icon: Users,
-                desc: "Connect service providers with customers in your area",
-                price: "",
-                soon: true
+                num: "03",
+                title: "You Go Live",
+                desc: "Launch your official ordering link! Receive orders online, manage incoming requests directly from your phone, and finally own your customer database.",
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600"
               }
-            ].map((prod, i) => (
-              <Card key={i} className="flex flex-col relative overflow-hidden group hover:border-primary transition-colors">
-                <CardHeader>
-                  <prod.icon className="h-8 w-8 text-primary mb-4" />
-                  <CardTitle>{prod.title}</CardTitle>
-                  {prod.soon && (
-                    <span className="absolute top-4 right-4 inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">
-                      Coming Soon
-                    </span>
-                  )}
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <p className="text-muted-foreground mb-4">{prod.desc}</p>
-                  {!prod.soon && <p className="font-semibold text-primary">{prod.price}</p>}
-                </CardContent>
-                <CardFooter>
-                  {prod.soon ? (
-                    <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white transition-colors" disabled>
-                      Learn More
-                    </Button>
-                  ) : (
-                    <Link href="/pricing" className={buttonVariants({ variant: "outline", className: "w-full group-hover:bg-primary group-hover:text-white transition-colors" })}>
-                      Learn More
-                    </Link>
-                  )}
-                </CardFooter>
-              </Card>
+            ].map((step, i) => (
+              <div key={i} className="flex flex-col md:flex-row gap-12 items-start group">
+                <div className="md:w-1/2 flex gap-6 mt-2">
+                  <span className="text-4xl font-light text-slate-300 group-hover:text-amber-500 transition-colors duration-300">{step.num}</span>
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4">{step.title}</h3>
+                    <p className="text-lg text-slate-500 leading-relaxed">{step.desc}</p>
+                  </div>
+                </div>
+                <div className="md:w-1/2 w-full">
+                  <BrowserMockup className="shadow-lg shadow-slate-200/50 border-slate-200/50 ring-1 ring-slate-900/5">
+                    <img src={step.image} alt={step.title} className="w-full aspect-[16/10] object-cover" />
+                  </BrowserMockup>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose HIMO-PH */}
-      <section className="py-24 bg-primary text-white">
+      {/* Solutions / Products - Clean Grid */}
+      <section className="py-32 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
-                Why Choose HIMO-PH?
+          <div className="mb-16 md:flex justify-between items-end">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-4">
+                Built for every Filipino business
               </h2>
-              <p className="text-lg text-primary-foreground/80 mb-8">
-                We do not just give you a website. We give you a complete system designed to convert visitors into loyal customers.
-              </p>
-              <div className="space-y-6">
-                {[
-                  { icon: Zap, title: "Fast Delivery", desc: "Live in 7 days, not 7 months." },
-                  { icon: Smartphone, title: "Mobile First", desc: "Works perfectly on any phone out of the box." },
-                  { icon: Navigation, title: "Made for Filipinos", desc: "Built specifically for Filipino businesses and local customers." },
-                  { icon: CheckCircle2, title: "Affordable", desc: "Plans starting at ₱499/month — less than ₱17/day!" }
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="mt-1 bg-secondary/20 p-2 rounded-lg text-secondary h-fit">
-                      <item.icon className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg">{item.title}</h3>
-                      <p className="text-primary-foreground/70">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1555421689-d68471e189f2?auto=format&fit=crop&q=80&w=1000" 
-                alt="Business owner using mobile app"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
+              <p className="text-lg text-slate-500">Whether you sell sticky rice or dental services, we have a digital architecture for you.</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Portfolio / Demo */}
-      <section className="py-24 bg-muted/30">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              See Our Work
-            </h2>
-          </div>
-          <div className="mx-auto max-w-4xl">
-            <Card className="overflow-hidden shadow-xl border-none">
-              <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="bg-slate-100 flex items-center justify-center p-8 min-h-[300px] relative">
-                  <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-                  <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600" alt="YUMPIA Demo" className="absolute inset-0 h-full w-full object-cover" />
-                  <div className="relative z-20 top-20">
-                     <span className="bg-black/50 backdrop-blur-md text-white px-4 py-2 rounded-full font-semibold border border-white/20">YUMPIA Screenshot Placeholder</span>
-                  </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "Food Ordering", icon: Utensils, desc: "Complete online ordering for restaurants, food stalls, and deliveries.", price: "₱499/mo", soon: false },
+              { title: "Custom Products", icon: ShoppingBag, desc: "For jewelry, cakes, clothes — let customers customize orders.", price: "₱999/mo", soon: false },
+              { title: "Appointment Booking", icon: Calendar, desc: "For salons, clinics, tutorials — online booking made simple.", soon: true },
+              { title: "Service Marketplace", icon: Users, desc: "Connect service providers with local customers.", soon: true }
+            ].map((prod, i) => (
+              <div key={i} className="flex flex-col p-8 rounded-2xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/5 transition-all relative group">
+                <div className="mb-6 h-12 w-12 rounded-xl bg-slate-50 flex items-center justify-center text-slate-600 group-hover:bg-blue-50 group-hover:text-blue-600 transition-colors">
+                  <prod.icon className="h-6 w-6" />
                 </div>
-                <div className="p-10 flex flex-col justify-center">
-                  <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-primary/10 text-primary w-fit mb-4">
-                    Featured Project
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{prod.title}</h3>
+                <p className="text-slate-500 flex-1 mb-6">{prod.desc}</p>
+                {prod.soon ? (
+                  <span className="text-sm font-medium text-amber-600 bg-amber-50 w-fit px-3 py-1 rounded-full">Coming Soon</span>
+                ) : (
+                  <div className="flex items-center justify-between border-t border-slate-100 pt-4 mt-auto">
+                    <span className="font-semibold text-slate-900">{prod.price}</span>
+                    <Link href="/pricing" className="text-sm font-medium text-blue-600 hover:text-blue-700">Learn more →</Link>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">YUMPIA — Food Ordering System</h3>
-                  <p className="text-muted-foreground mb-8">
-                    Complete food ordering platform with customization, add-ons, real-time tracking, and a powerful admin dashboard.
-                  </p>
-                  <a 
-                    href="https://yumpia.vercel.app" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className={buttonVariants({ className: "w-fit gap-2" })}
-                  >
-                    View Live Demo <ArrowRight className="h-4 w-4" />
-                  </a>
-                </div>
+                )}
               </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              What our clients say
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <Card key={i} className="bg-muted/50 border-none">
-                <CardContent className="p-8">
-                  <div className="flex gap-1 mb-4 text-secondary">
-                    {[...Array(5)].map((_, j) => <Star key={j} className="h-5 w-5 fill-current" />)}
-                  </div>
-                  <p className="text-lg font-medium leading-relaxed mb-6">
-                    &quot;Working with HIMO-PH completely changed how we handle online orders. We stopped strictly relying on chat and finally own our customer data.&quot;
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <div className="h-12 w-12 rounded-full bg-slate-200" />
-                    <div>
-                      <p className="font-semibold text-foreground">Client Name</p>
-                      <p className="text-sm text-muted-foreground">Business Owner</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="py-24 bg-accent relative overflow-hidden">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-6">
+      {/* Portfolio / Trust / Shopify Style */}
+      <section className="py-32 bg-slate-900 text-white overflow-hidden relative">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555421689-d68471e189f2?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-10 mix-blend-luminosity"></div>
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white mb-6 border border-white/20">
+                <Star className="h-4 w-4 text-amber-400 mr-2" /> Featured Case Study
+              </div>
+              <h2 className="text-4xl font-bold tracking-tight mb-6">YUMPIA: The complete food ordering platform.</h2>
+              <p className="text-lg text-slate-300 mb-8 leading-relaxed">
+                See how we transformed a student project into a fully functional, highly scalable food ordering system handling customization, real-time tracking, and comprehensive admin dashboarding.
+              </p>
+              
+              <ul className="space-y-4 mb-10">
+                {['No more lost chat orders', 'Automated total calculations', 'Customer database ownership'].map((check, i) => (
+                  <li key={i} className="flex items-center text-slate-300">
+                    <CheckCircle2 className="h-5 w-5 text-emerald-400 mr-3 shrink-0" />
+                    <span>{check}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a 
+                href="https://yumpia.vercel.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={buttonVariants({ size: "lg", className: "bg-white text-slate-900 hover:bg-slate-100 shadow-lg text-base h-12 px-8" })}
+              >
+                View Live Demo <ArrowRight className="ml-2 h-4 w-4 text-slate-500" />
+              </a>
+            </div>
+            
+            <div className="relative">
+              {/* Mac framing for premium feel */}
+              <BrowserMockup className="border-white/20 shadow-2xl shadow-blue-900/50 bg-slate-800">
+                <img 
+                  src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=800" 
+                  alt="Yumpia Interface Placeholder" 
+                  className="w-full object-cover opacity-80 mix-blend-overlay aspect-[4/3]"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                   <div className="bg-slate-900/80 backdrop-blur-md px-6 py-3 rounded-lg border border-white/10 text-center">
+                      <p className="text-white font-semibold">YUMPIA Admin Screenshot</p>
+                      <p className="text-slate-400 text-sm">(Replace with real PNG)</p>
+                   </div>
+                </div>
+              </BrowserMockup>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WhatsApp CTA Action Bar */}
+      <section className="py-24 bg-blue-600 text-white text-center">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
             Ready to take your business online?
           </h2>
-          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Free consultation, no commitment. Let&apos;s talk about what we can build for you.
+          <p className="text-lg text-blue-100 mb-10">
+            Free consultation, no commitment. Let's talk about what we can build for you right now.
           </p>
           <a 
             href="https://wa.me/639000000000" 
             target="_blank" 
             rel="noopener noreferrer"
-            className={buttonVariants({ size: "lg", className: "bg-[#25D366] hover:bg-[#25D366]/90 text-white gap-2 text-lg h-14 px-8 shadow-lg transition-transform hover:scale-105" })}
+            className={buttonVariants({ size: "lg", className: "bg-white text-blue-600 hover:bg-slate-50 gap-2 h-14 px-8 text-lg shadow-xl shadow-blue-900/20" })}
           >
-            <MessageCircle className="h-6 w-6" /> WhatsApp Us Now
+            <MessageCircle className="h-6 w-6 text-green-500" /> WhatsApp Us Now
           </a>
         </div>
       </section>
