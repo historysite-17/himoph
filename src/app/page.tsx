@@ -1,8 +1,9 @@
 "use client"
 
+import { useState } from "react";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, MessageCircle, Phone, Settings, Zap, Smartphone, Globe, Navigation, Utensils, Star, ShoppingBag, Calendar, Users, GraduationCap, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, MessageCircle, Phone, Settings, Zap, Smartphone, Globe, Navigation, Utensils, Star, ShoppingBag, Calendar, Users, GraduationCap, ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Helper component for SaaS Browser Frame mockup
@@ -28,6 +29,12 @@ function BrowserMockup({ children, className }: { children: React.ReactNode, cla
 }
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slideImages = ["/admin.png", "/storefront.png", "/create.png", "/delivered.png"];
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slideImages.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slideImages.length) % slideImages.length);
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
       
@@ -124,19 +131,19 @@ export default function Home() {
                 num: "01",
                 title: "Contact Us",
                 desc: "Tell us about your business scope and operations. We will analyze your needs and recommend the perfect digital plan for you. No technical jargon, just straight business value.",
-                image: "/storefront.png"
+                image: "/step1.png"
               },
               {
                 num: "02",
                 title: "We Build It",
                 desc: "Our team sets up your complete ordering system in 3-7 days using proven technology. We handle the menus, the admin panel configuration, and the integrations.",
-                image: "/create.png"
+                image: "/step2.png"
               },
               {
                 num: "03",
                 title: "You Go Live",
                 desc: "Launch your official ordering link! Receive orders online, manage incoming requests directly from your phone, and finally own your customer database.",
-                image: "/delivered.png"
+                image: "/step3.png"
               }
             ].map((step, i) => (
               <div key={i} className="flex flex-col md:flex-row gap-12 items-start group">
@@ -233,16 +240,32 @@ export default function Home() {
             <div className="relative">
               {/* Mac framing for premium feel */}
               <BrowserMockup className="border-white/20 shadow-2xl shadow-blue-900/50 bg-slate-800">
-                <img 
-                  src="/admin.png" 
-                  alt="Yumpia Interface Screenshot" 
-                  className="w-full object-cover opacity-80 mix-blend-overlay aspect-[4/3]"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="bg-slate-900/80 backdrop-blur-md px-6 py-3 rounded-lg border border-white/10 text-center">
-                      <p className="text-white font-semibold">YUMPIA Admin Screenshot</p>
-                      <p className="text-slate-400 text-sm">(Replace with real PNG)</p>
-                   </div>
+                <div className="relative group">
+                  <img 
+                    src={slideImages[currentSlide]} 
+                    alt={`Yumpia System Image ${currentSlide + 1}`} 
+                    className="w-full object-cover opacity-90 mix-blend-normal aspect-[4/3] transition-all duration-500"
+                  />
+                  
+                  {/* Slider Controls */}
+                  <div className="absolute inset-0 flex items-center justify-between px-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <button onClick={prevSlide} className="bg-slate-900/50 hover:bg-blue-600 text-white p-2 rounded-full backdrop-blur transition-colors">
+                      <ChevronLeft className="h-6 w-6" />
+                    </button>
+                    <button onClick={nextSlide} className="bg-slate-900/50 hover:bg-blue-600 text-white p-2 rounded-full backdrop-blur transition-colors">
+                      <ChevronRight className="h-6 w-6" />
+                    </button>
+                  </div>
+                  
+                  {/* Indicators */}
+                  <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                    {slideImages.map((_, idx) => (
+                      <div 
+                        key={idx} 
+                        className={cn("h-2 w-2 rounded-full transition-all", idx === currentSlide ? "bg-blue-500 w-4" : "bg-white/50")}
+                      />
+                    ))}
+                  </div>
                 </div>
               </BrowserMockup>
             </div>
