@@ -86,8 +86,8 @@ export default function Home() {
               
               <BrowserMockup className="rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
                 <img 
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Dashboard Placeholder" 
+                  src="/admin.png" 
+                  alt="Yumpia Admin Dashboard" 
                   className="w-full object-cover aspect-[4/3] opacity-90"
                 />
               </BrowserMockup>
@@ -124,19 +124,19 @@ export default function Home() {
                 num: "01",
                 title: "Contact Us",
                 desc: "Tell us about your business scope and operations. We will analyze your needs and recommend the perfect digital plan for you. No technical jargon, just straight business value.",
-                image: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=600"
+                image: "/storefront.png"
               },
               {
                 num: "02",
                 title: "We Build It",
                 desc: "Our team sets up your complete ordering system in 3-7 days using proven technology. We handle the menus, the admin panel configuration, and the integrations.",
-                image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&q=80&w=600"
+                image: "/create.png"
               },
               {
                 num: "03",
                 title: "You Go Live",
                 desc: "Launch your official ordering link! Receive orders online, manage incoming requests directly from your phone, and finally own your customer database.",
-                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600"
+                image: "/delivered.png"
               }
             ].map((step, i) => (
               <div key={i} className="flex flex-col md:flex-row gap-12 items-start group">
@@ -234,8 +234,8 @@ export default function Home() {
               {/* Mac framing for premium feel */}
               <BrowserMockup className="border-white/20 shadow-2xl shadow-blue-900/50 bg-slate-800">
                 <img 
-                  src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=800" 
-                  alt="Yumpia Interface Placeholder" 
+                  src="/admin.png" 
+                  alt="Yumpia Interface Screenshot" 
                   className="w-full object-cover opacity-80 mix-blend-overlay aspect-[4/3]"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
