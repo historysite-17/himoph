@@ -155,9 +155,11 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="md:w-1/2 w-full">
-                  <BrowserMockup className="shadow-lg shadow-slate-200/50 border-slate-200/50 ring-1 ring-slate-900/5">
-                    <img src={step.image} alt={step.title} className="w-full aspect-[16/10] object-cover" />
-                  </BrowserMockup>
+                  <img 
+                    src={step.image} 
+                    alt={step.title} 
+                    className="w-full rounded-2xl shadow-xl border border-slate-100/50 object-cover" 
+                  />
                 </div>
               </div>
             ))}
