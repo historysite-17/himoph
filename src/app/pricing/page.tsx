@@ -103,13 +103,16 @@ export default function Pricing() {
     <div className="flex flex-col min-h-screen bg-white pb-24 font-sans">
       
       {/* Hero */}
-      <section className="pt-24 pb-16 px-6 text-center max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight text-slate-900">
-          Simple, transparent pricing
-        </h1>
-        <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
-          No hidden fees. Cancel anytime. Choose the perfect plan to digitize your operations and grow your sales.
-        </p>
+      <section className="bg-primary pt-32 pb-20 px-6 text-center text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-white drop-shadow-sm">
+            Simple, transparent pricing
+          </h1>
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
+            No hidden fees. Cancel anytime. Choose the perfect plan to digitize your operations and grow your sales.
+          </p>
+        </div>
       </section>
 
       {/* Pricing Cards - Canva Style */}
