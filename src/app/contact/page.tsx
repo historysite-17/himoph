@@ -20,11 +20,14 @@ export default function Contact() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero */}
-      <section className="bg-primary py-20 px-6 text-center text-white">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Let&apos;s Talk!</h1>
-        <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto">
-          Free consultation for your business. We usually reply within 1 hour.
-        </p>
+      <section className="bg-primary py-24 px-6 text-center text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+        <div className="relative z-10 max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight drop-shadow-sm">Let&apos;s Talk!</h1>
+          <p className="text-lg md:text-xl text-white/90 drop-shadow-sm">
+            Free consultation for your business. We usually reply within 1 hour.
+          </p>
+        </div>
       </section>
 
       {/* Content */}

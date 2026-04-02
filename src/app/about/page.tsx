@@ -7,7 +7,7 @@ export default function About() {
     <div className="flex flex-col min-h-screen">
       {/* Hero */}
       <section className="bg-primary py-24 px-6 text-center text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-[...placeholder-id...]')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
         <div className="relative z-10 max-w-3xl mx-auto">
           <Badge className="bg-secondary text-secondary-foreground mb-6 hover:bg-secondary border-none">Our Story</Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">About HIMO-PH</h1>
@@ -64,22 +64,26 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team (Placeholder) */}
+      {/* Team Section */}
       <section className="py-24 px-6 mx-auto w-full max-w-7xl text-center">
         <h2 className="text-3xl font-bold mb-16">Meet the Team</h2>
-        <div className="flex justify-center">
-          <div className="group text-center">
-            <div className="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 bg-slate-200 border-4 border-white shadow-xl group-hover:border-secondary transition-colors">
-              <div className="w-full h-full flex items-center justify-center text-slate-400">
-                <span className="text-6xl font-bold">M</span>
+        <div className="flex flex-wrap justify-center gap-12 lg:gap-24">
+          {[
+            { img: "/shai.png", name: "Shai", role: "Design Lead", desc: "Passionate about creating simple, accessible, and beautiful interfaces." },
+            { img: "/dou.png", name: "Dou", role: "Backend Architect", desc: "Specializes in scalable databases and robust integrations." },
+            { img: "/marco.png", name: "Marco", role: "Founder & Developer", desc: "Student developer passionate about building systems that help local businesses thrive." }
+          ].map((member, i) => (
+            <div key={i} className="group text-center max-w-xs">
+              <div className="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 bg-slate-100 border-4 border-white shadow-xl group-hover:border-blue-400 transition-colors duration-300">
+                <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
               </div>
+              <h3 className="text-2xl font-bold text-slate-900">{member.name}</h3>
+              <p className="text-blue-600 font-bold mb-3">{member.role}</p>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                {member.desc}
+              </p>
             </div>
-            <h3 className="text-2xl font-bold">Marco</h3>
-            <p className="text-primary font-medium mb-2">Founder & Developer</p>
-            <p className="text-muted-foreground text-sm max-w-xs mx-auto">
-              Student developer passionate about building systems that help local businesses thrive in the digital age.
-            </p>
-          </div>
+          ))}
         </div>
       </section>
     </div>
