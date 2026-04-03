@@ -104,12 +104,12 @@ export default function Pricing() {
     <div className="flex flex-col min-h-screen bg-white pb-32">
       
       {/* Hero */}
-      <section className="relative pt-32 pb-24 px-6 text-center overflow-hidden">
+      <section className="relative pt-20 pb-24 px-6 text-center overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,_var(--tw-gradient-stops))] from-sky-100/50 via-white to-white"></div>
         <div className="relative z-10 max-w-4xl mx-auto">
           <Badge className="bg-sky-100 text-primary mb-8 hover:bg-sky-100 border-sky-200 px-4 py-1.5 text-sm font-bold">Pricing Plans</Badge>
           <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter text-slate-900 leading-none">
-            Simple, <span className="text-primary italic">Transparent</span> Pricing
+            Simple, <span className="text-primary">Transparent</span> Pricing
           </h1>
           <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto">
             No hidden fees. Cancel anytime. Choose the perfect plan to digitize your operations and grow your sales.
@@ -193,7 +193,7 @@ export default function Pricing() {
       {/* FAQ */}
       <section className="px-6 pt-40 mx-auto max-w-4xl w-full">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">Frequently Ask <span className="text-primary italic">Questions</span></h2>
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">Frequently Ask <span className="text-primary">Questions</span></h2>
         </div>
         <div className="grid grid-cols-1 gap-4">
           {faqs.map((faq, i) => (
@@ -211,7 +211,7 @@ export default function Pricing() {
       {/* Final CTA */}
       <section className="mt-40 px-6">
         <div className="bg-sky-50/50 rounded-[4rem] border border-sky-100 max-w-5xl mx-auto py-24 px-12 text-center">
-          <h2 className="text-4xl font-black text-slate-900 mb-6">Still not sure <span className="text-primary italic">which plan is right?</span></h2>
+          <h2 className="text-4xl font-black text-slate-900 mb-6">Still not sure <span className="text-primary">which plan is right?</span></h2>
           <p className="text-xl text-slate-500 mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
             Contact our team and we&apos;ll help you assess your operational needs and recommend the perfect fit.
           </p>

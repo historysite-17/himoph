@@ -39,7 +39,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-white">
       
       {/* SaaS Hero Section */}
-      <section className="relative px-6 lg:px-8 pt-32 pb-40 overflow-hidden">
+      <section className="relative px-6 lg:px-8 pt-20 pb-40 overflow-hidden">
         {/* Sky blue radial gradient background */}
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_20%,_var(--tw-gradient-stops))] from-sky-100/50 via-white to-white"></div>
         <div className="absolute top-0 right-0 -z-10 h-[600px] w-[600px] rounded-full bg-sky-50/30 blur-3xl opacity-60 transition-all translate-x-1/2 -translate-y-1/4 animate-pulse"></div>
@@ -53,7 +53,7 @@ export default function Home() {
                 Now available across the Philippines
               </div>
               <h1 className="text-6xl font-black tracking-tighter text-slate-900 sm:text-7xl mb-8 leading-[0.95]">
-                We&apos;re here to Increase your <span className="text-primary italic">Productivity</span>
+                We&apos;re here to Increase your <span className="text-primary">Productivity</span>
               </h1>
               <p className="text-xl leading-relaxed text-slate-500 mb-12 max-w-lg font-medium">
                 We build custom ordering systems for Filipino businesses. If you sell it, we digitize it. Say goodbye to manual chat orders and hello to automation.
@@ -119,7 +119,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto mb-20 text-center">
             <h2 className="text-4xl font-extrabold tracking-tight text-slate-900 mb-6 sm:text-5xl">
-              Key features of <span className="text-primary italic">SaaS</span>
+              Key features of <span className="text-primary">SaaS</span>
             </h2>
             <p className="text-lg text-slate-500 font-medium">
               Increased efficiency and cost effectiveness are the reasons many businesses give for turning to cloud-based SaaS solutions.
@@ -151,7 +151,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <div className="text-center mb-20 max-w-3xl mx-auto">
             <h2 className="text-4xl font-black tracking-tight text-slate-900 sm:text-5xl mb-6">
-              Simple process. <span className="text-primary italic">Powerful results.</span>
+              Simple process. <span className="text-primary">Powerful results.</span>
             </h2>
             <p className="text-lg text-slate-500 font-medium leading-relaxed">
               We&apos;ve refined our onboarding to be as smooth as silk. No technical hurdles, just business growth.
@@ -193,22 +193,22 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto mb-20">
             <h2 className="text-4xl font-black tracking-tight text-slate-900 mb-6 sm:text-5xl">
-              Our plans scale <span className="text-primary italic">with your product</span>
+              Our plans scale <span className="text-primary">with your product</span>
             </h2>
             <p className="text-lg text-slate-500 font-medium">Simple, transparent pricing for every stage of your business.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
-              { name: "Basic Package", price: "$29", features: ["Feedback Categorization", "Features Prioritization", "Real-Time Collaboration", "Essential Dev Tools Integrations"] },
-              { name: "Premium Package", price: "$59", highlighted: true, features: ["Feedback Categorization", "Features Prioritization", "Real-Time Collaboration", "Feedback Loop Notifications", "Essential Dev Tools Integrations"] },
-              { name: "Business Package", price: "$99", features: ["Feedback Categorization", "Features Prioritization", "Real-Time Collaboration", "Feedback Loop Notifications", "Essential Dev Tools Integrations"] },
+              { name: "Basic Package", price: "₱499", features: ["Feedback Categorization", "Features Prioritization", "Real-Time Collaboration", "Essential Dev Tools Integrations"] },
+              { name: "Premium Package", price: "₱999", highlighted: true, features: ["Feedback Categorization", "Features Prioritization", "Real-Time Collaboration", "Feedback Loop Notifications", "Essential Dev Tools Integrations"] },
+              { name: "Business Package", price: "₱2,499", features: ["Feedback Categorization", "Features Prioritization", "Real-Time Collaboration", "Feedback Loop Notifications", "Essential Dev Tools Integrations"] },
             ].map((plan, i) => (
               <div key={i} className={cn("flex flex-col p-12 rounded-[3.5rem] border transition-all text-left", plan.highlighted ? "bg-primary text-white border-primary shadow-2xl scale-105" : "bg-white border-sky-100 shadow-xl shadow-sky-500/5")}>
                 <h3 className="text-2xl font-bold mb-8">{plan.name}</h3>
                 <div className="mb-10">
                   <span className="text-5xl font-black">{plan.price}</span>
-                  <span className={cn("text-sm", plan.highlighted ? "text-white/60" : "text-slate-400")}> / month</span>
+                  <span className={cn("text-sm", plan.highlighted ? "text-white" : "text-slate-400 font-bold")}> / month</span>
                 </div>
                 <ul className="space-y-4 mb-12 flex-1">
                   {plan.features.map((feat, j) => (
@@ -235,7 +235,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
           <div className="mb-20 text-center">
             <h2 className="text-4xl font-black tracking-tight text-slate-900 sm:text-5xl mb-6">
-              What Our Clients Say <span className="text-primary italic">About Us</span>
+              What Our Clients Say <span className="text-primary">About Us</span>
             </h2>
           </div>
           
@@ -321,7 +321,7 @@ export default function Home() {
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <div className="mb-20">
             <h2 className="text-4xl font-extrabold tracking-tight text-slate-900 mb-6 sm:text-5xl">
-              Frequently Ask <span className="text-primary italic">Questions</span>
+              Frequently Ask <span className="text-primary">Questions</span>
             </h2>
           </div>
           

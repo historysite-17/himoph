@@ -6,12 +6,12 @@ export default function About() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative py-32 px-6 text-center overflow-hidden">
+      <section className="relative pt-20 pb-24 px-6 text-center overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,_var(--tw-gradient-stops))] from-sky-100/50 via-white to-white"></div>
         <div className="relative z-10 max-w-3xl mx-auto">
           <Badge className="bg-sky-100 text-primary mb-8 hover:bg-sky-100 border-sky-200 px-4 py-1.5 text-sm font-bold">Our Story</Badge>
           <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter text-slate-900 leading-none">
-            About <span className="text-primary italic">HIMO-PH</span>
+            About <span className="text-primary">HIMO-PH</span>
           </h1>
           <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto">
             Born from a school project that became a real product. We are on a mission to digitize Filipino businesses.
@@ -46,7 +46,7 @@ export default function About() {
       <section className="py-32 bg-white px-6">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-24 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-black mb-8 text-slate-900">Our <span className="text-primary italic">Mission</span></h2>
+            <h2 className="text-4xl md:text-5xl font-black mb-8 text-slate-900">Our <span className="text-primary">Mission</span></h2>
             <p className="text-2xl text-slate-500 font-bold leading-relaxed italic">
               &quot;To help Filipino businesses go digital — fast, affordable, and built specifically for the Philippine market.&quot;
             </p>
@@ -73,7 +73,7 @@ export default function About() {
 
       {/* Team Section */}
       <section className="py-32 px-6 mx-auto w-full max-w-7xl text-center">
-        <h2 className="text-4xl md:text-5xl font-black mb-24 text-slate-900">Meet the <span className="text-primary italic">Team</span></h2>
+        <h2 className="text-4xl md:text-5xl font-black mb-24 text-slate-900">Meet the <span className="text-primary">Team</span></h2>
         <div className="flex flex-wrap justify-center gap-16 lg:gap-32">
           {[
             { img: "/shai.png", name: "Shai", role: "Design Lead", desc: "Passionate about creating simple, accessible, and beautiful interfaces." },
