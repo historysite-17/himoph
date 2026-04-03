@@ -14,11 +14,11 @@ export function Footer() {
               </Link>
             </div>
             <p className="text-slate-400 mb-6 max-w-sm text-lg leading-relaxed">
-              We Build. You Grow. 🇵🇭<br/>
+              We Build. You Grow. 🇵🇭<br />
               Custom online ordering systems built specifically for Filipino businesses.
             </p>
           </div>
-          
+
           <div>
             <h4 className="font-bold text-white mb-6 uppercase tracking-widest text-sm">Quick Links</h4>
             <ul className="space-y-3">
@@ -28,13 +28,13 @@ export function Footer() {
               <li><Link href="/contact" className="text-slate-400 hover:text-blue-400 transition-colors">Contact</Link></li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-bold text-white mb-6 uppercase tracking-widest text-sm">Contact Info</h4>
             <ul className="space-y-4">
               <li className="flex items-center text-slate-400">
                 <MapPin className="h-5 w-5 mr-3 text-blue-500" />
-                <span>South Philippines</span>
+                <span>Zamboanga City, Philippines</span>
               </li>
               <li className="flex items-center text-slate-400">
                 <Mail className="h-5 w-5 mr-3 text-blue-500" />
@@ -47,10 +47,10 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-primary-foreground/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-primary-foreground/60">
           <p>© {new Date().getFullYear()} HIMO-PH. All rights reserved.</p>
-          <p className="mt-2 md:mt-0">Made with ❤️ in South Philippines 🇵🇭</p>
+          <p className="mt-2 md:mt-0">Made with ❤️ in Zamboanga City, Philippines 🇵🇭</p>
         </div>
       </div>
     </footer>
