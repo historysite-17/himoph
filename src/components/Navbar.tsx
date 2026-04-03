@@ -37,7 +37,7 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Link href="/contact" className={buttonVariants({ className: "bg-white text-blue-600 hover:bg-blue-50 shadow-sm" })}>
+            <Link href="/contact" className={buttonVariants({ className: "bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-sm" })}>
               Get Started
             </Link>
           </div>
@@ -69,7 +69,7 @@ export function Navbar() {
               </Link>
             ))}
             <div className="px-3 py-2">
-              <Link href="/contact" onClick={() => setIsOpen(false)} className={buttonVariants({ className: "w-full bg-white text-blue-600 hover:bg-blue-50" })}>
+              <Link href="/contact" onClick={() => setIsOpen(false)} className={buttonVariants({ className: "w-full bg-secondary text-secondary-foreground hover:bg-secondary/90" })}>
                 Get Started
               </Link>
             </div>
