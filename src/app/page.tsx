@@ -39,7 +39,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-white">
       
       {/* SaaS Hero Section */}
-      <section className="relative px-6 lg:px-8 pt-20 pb-40 overflow-hidden">
+      <section className="relative px-6 lg:px-8 pt-12 pb-40 overflow-hidden">
         {/* Sky blue radial gradient background */}
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_20%,_var(--tw-gradient-stops))] from-sky-100/50 via-white to-white"></div>
         <div className="absolute top-0 right-0 -z-10 h-[600px] w-[600px] rounded-full bg-sky-50/30 blur-3xl opacity-60 transition-all translate-x-1/2 -translate-y-1/4 animate-pulse"></div>

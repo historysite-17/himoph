@@ -22,7 +22,7 @@ export default function Contact() {
   return (
     <div className="flex flex-col min-h-screen bg-white pb-32">
       {/* Hero */}
-      <section className="relative py-20 px-6 text-center overflow-hidden">
+      <section className="relative pt-12 pb-20 px-6 text-center overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,_var(--tw-gradient-stops))] from-sky-100/50 via-white to-white"></div>
         <div className="relative z-10 max-w-3xl mx-auto">
           <Badge className="bg-sky-100 text-primary mb-8 hover:bg-sky-100 border-sky-200 px-4 py-1.5 text-sm font-bold">Contact Us</Badge>

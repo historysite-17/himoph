@@ -49,7 +49,7 @@
 }
 
 :root {
-  --background: #FFFFFF;
+  --background: #F8FAFC; /* Subtle sky/slate tint to blend with hero */
   --foreground: #0F172A;
   --card: #FFFFFF;
   --card-foreground: #0F172A;
