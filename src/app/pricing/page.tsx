@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Check, Minus } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
@@ -100,76 +101,84 @@ export default function Pricing() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-white pb-24 font-sans">
+    <div className="flex flex-col min-h-screen bg-white pb-32">
       
       {/* Hero */}
-      <section className="bg-primary pt-32 pb-20 px-6 text-center text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+      <section className="relative pt-32 pb-24 px-6 text-center overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,_var(--tw-gradient-stops))] from-sky-100/50 via-white to-white"></div>
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-white drop-shadow-sm">
-            Simple, transparent pricing
+          <Badge className="bg-sky-100 text-primary mb-8 hover:bg-sky-100 border-sky-200 px-4 py-1.5 text-sm font-bold">Pricing Plans</Badge>
+          <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter text-slate-900 leading-none">
+            Simple, <span className="text-primary italic">Transparent</span> Pricing
           </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
+          <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto">
             No hidden fees. Cancel anytime. Choose the perfect plan to digitize your operations and grow your sales.
           </p>
         </div>
       </section>
 
-      {/* Pricing Cards - Canva Style */}
+      {/* Pricing Cards */}
       <section className="px-6 mx-auto w-full max-w-7xl relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
           {plans.map((plan, i) => (
             <div 
               key={i} 
               className={cn(
-                "flex flex-col rounded-2xl bg-white transition-all duration-300 relative",
+                "flex flex-col p-12 rounded-[3.5rem] border transition-all text-left relative",
                 plan.popular 
-                  ? "border border-blue-600 shadow-[0_0_40px_-10px_rgba(37,99,235,0.2)] lg:-mt-4 lg:mb-4 z-10 ring-1 ring-blue-600" 
-                  : "border border-slate-200 shadow-xl shadow-slate-200/50"
+                  ? "bg-primary text-white border-primary shadow-2xl scale-105 z-10 shadow-primary/20" 
+                  : "bg-white border-sky-100 shadow-xl shadow-sky-500/5 hover:border-primary/20"
               )}
             >
               {plan.popular && (
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <span className="bg-blue-600 text-white text-xs font-bold uppercase tracking-wider py-1.5 px-4 rounded-full shadow-md">
+                  <span className="bg-white text-primary text-xs font-black uppercase tracking-widest py-2 px-6 rounded-full shadow-xl border border-sky-100">
                     Most Popular
                   </span>
                 </div>
               )}
               
-              <div className="p-8 pb-0">
-                <h3 className="text-xl font-bold tracking-tight text-slate-900 mb-2">{plan.name}</h3>
-                <p className="text-sm text-slate-500 mb-6 h-10">{plan.desc}</p>
-                <div className="flex items-baseline mb-8">
-                  <span className="text-5xl font-extrabold tracking-tight text-slate-900">{plan.price}</span>
-                  <span className="text-slate-500 ml-1 font-medium">{plan.period}</span>
-                </div>
-                
-                <Link 
-                  href={plan.href}
-                  className={buttonVariants({ 
-                    className: cn(
-                      "w-full h-12 text-base font-semibold shadow-none transition-colors",
-                      plan.popular 
-                        ? "bg-blue-600 hover:bg-blue-700 text-white" 
-                        : "bg-slate-100 hover:bg-slate-200 text-slate-900"
-                    ) 
-                  })}
-                >
-                  {plan.cta}
-                </Link>
+              <div className="mb-10">
+                <h3 className="text-2xl font-bold mb-4">{plan.name}</h3>
+                <p className={cn("text-sm font-medium h-10", plan.popular ? "text-white/70" : "text-slate-500")}>
+                  {plan.desc}
+                </p>
               </div>
 
-              <div className="p-8">
-                <p className="text-sm font-semibold text-slate-900 mb-4 uppercase tracking-wide">Features included:</p>
-                <ul className="space-y-4">
+              <div className="mb-12">
+                <span className="text-5xl font-black">{plan.price}</span>
+                <span className={cn("text-sm font-bold opacity-60", plan.popular ? "text-white" : "text-slate-400")}>
+                  {plan.period}
+                </span>
+              </div>
+              
+              <Link 
+                href={plan.href}
+                className={cn(
+                  "w-full py-5 rounded-full font-bold transition-all text-center mb-12",
+                  plan.popular 
+                    ? "bg-white text-primary hover:bg-sky-50 shadow-lg" 
+                    : "bg-primary text-white hover:scale-105 shadow-xl shadow-sky-500/10"
+                )}
+              >
+                {plan.cta}
+              </Link>
+
+              <div className="space-y-5">
+                <p className={cn("text-xs font-black uppercase tracking-widest", plan.popular ? "text-white/60" : "text-slate-400")}>
+                  Features included:
+                </p>
+                <ul className="space-y-4 flex-1">
                   {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start text-sm">
-                      {feature.included ? (
-                        <Check className="h-5 w-5 text-blue-600 mr-3 shrink-0" strokeWidth={2.5} />
-                      ) : (
-                        <Minus className="h-5 w-5 text-slate-300 mr-3 shrink-0" strokeWidth={2.5} />
-                      )}
-                      <span className={feature.included ? "text-slate-700 font-medium" : "text-slate-400"}>
+                    <li key={idx} className="flex items-start text-sm font-medium gap-3">
+                      <div className={cn("h-5 w-5 rounded-full flex items-center justify-center shrink-0 mt-0.5", plan.popular ? "bg-white/20" : "bg-sky-100")}>
+                        {feature.included ? (
+                          <Check className={cn("h-3 w-3", plan.popular ? "text-white" : "text-primary")} strokeWidth={4} />
+                        ) : (
+                          <Minus className={cn("h-3 w-3", plan.popular ? "text-white/40" : "text-slate-300")} strokeWidth={4} />
+                        )}
+                      </div>
+                      <span className={cn("flex-1", feature.included ? (plan.popular ? "text-white" : "text-slate-700") : (plan.popular ? "text-white/40" : "text-slate-400"))}>
                         {feature.name}
                       </span>
                     </li>
@@ -182,28 +191,31 @@ export default function Pricing() {
       </section>
 
       {/* FAQ */}
-      <section className="px-6 pt-32 mx-auto max-w-3xl w-full">
-        <h2 className="text-3xl font-bold text-center mb-12 text-slate-900 tracking-tight">Frequently Asked Questions</h2>
-        <Accordion className="w-full">
+      <section className="px-6 pt-40 mx-auto max-w-4xl w-full">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">Frequently Ask <span className="text-primary italic">Questions</span></h2>
+        </div>
+        <div className="grid grid-cols-1 gap-4">
           {faqs.map((faq, i) => (
-            <AccordionItem key={i} value={`item-${i}`} className="border-slate-200 py-2">
-              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:no-underline hover:text-blue-600 transition-colors">
+            <div key={i} className="bg-white p-8 rounded-3xl shadow-lg shadow-sky-500/5 border border-sky-100 transition-all hover:border-primary/20">
+              <h3 className="text-lg font-bold text-primary mb-4 flex items-center justify-between">
                 {faq.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-500 text-base leading-relaxed pb-4">
-                {faq.a}
-              </AccordionContent>
-            </AccordionItem>
+                <span className="text-xl">+</span>
+              </h3>
+              <p className="text-slate-500 leading-relaxed font-medium">{faq.a}</p>
+            </div>
           ))}
-        </Accordion>
+        </div>
       </section>
 
       {/* Final CTA */}
-      <section className="mt-32 px-6">
-        <div className="bg-slate-50 border border-slate-100 rounded-2xl max-w-5xl mx-auto py-16 px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Still not sure which plan is right for you?</h2>
-          <p className="text-slate-500 mb-8 max-w-2xl mx-auto">Contact our team and we'll help you assess your operational needs and recommend the perfect fit.</p>
-          <Link href="/contact" className={buttonVariants({ variant: "outline", size: "lg", className: "h-12 px-8 border-slate-300" })}>
+      <section className="mt-40 px-6">
+        <div className="bg-sky-50/50 rounded-[4rem] border border-sky-100 max-w-5xl mx-auto py-24 px-12 text-center">
+          <h2 className="text-4xl font-black text-slate-900 mb-6">Still not sure <span className="text-primary italic">which plan is right?</span></h2>
+          <p className="text-xl text-slate-500 mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
+            Contact our team and we&apos;ll help you assess your operational needs and recommend the perfect fit.
+          </p>
+          <Link href="/contact" className={buttonVariants({ size: "lg", className: "bg-primary text-white rounded-full h-16 px-12 text-lg font-bold shadow-2xl shadow-primary/20 hover:scale-105 transition-all" })}>
             Talk to an Expert
           </Link>
         </div>
