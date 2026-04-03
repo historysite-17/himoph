@@ -23,7 +23,17 @@ export default function Contact() {
     <div className="flex flex-col min-h-screen bg-white pb-32">
       {/* Hero */}
       <section className="relative pt-12 pb-20 px-6 text-center overflow-hidden">
+        {/* Background Layer */}
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,_var(--tw-gradient-stops))] from-sky-100/50 via-white to-white"></div>
+        <div className="absolute inset-0 -z-10 overflow-hidden opacity-30 mix-blend-multiply">
+          <img 
+            src="/hero_contact_bg.png" 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent"></div>
+        </div>
+
         <div className="relative z-10 max-w-3xl mx-auto">
           <Badge className="bg-sky-100 text-primary mb-8 hover:bg-sky-100 border-sky-200 px-4 py-1.5 text-sm font-bold">Contact Us</Badge>
           <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter text-slate-900 leading-none">
