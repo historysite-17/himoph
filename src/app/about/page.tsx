@@ -8,14 +8,14 @@ export default function About() {
       {/* Hero */}
       <section className="relative pt-12 pb-24 px-6 text-center overflow-hidden">
         {/* Background Layer */}
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,_var(--tw-gradient-stops))] from-sky-100/50 via-white to-white"></div>
-        <div className="absolute inset-0 -z-10 overflow-hidden opacity-30 mix-blend-multiply">
+        <div className="absolute inset-0 -z-10 overflow-hidden">
           <img 
             src="/hero_about_bg.png" 
             alt="" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-50"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-sky-100/30"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_var(--tw-gradient-stops))] from-sky-200/20 via-white/40 to-white"></div>
         </div>
 
         <div className="relative z-10 max-w-3xl mx-auto">
